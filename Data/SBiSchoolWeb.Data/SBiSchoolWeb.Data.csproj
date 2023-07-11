@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAA26672-DC77-4BD4-962A-2B0A0F5A1C8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SBiSchoolWeb.Data</RootNamespace>
+    <AssemblyName>SBiSchoolWeb.Data</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=6.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.EnterpriseLibrary.Data">
+      <HintPath>..\..\library\Microsoft.Practices.EnterpriseLibrary.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccountDAC.cs" />
+    <Compile Include="AccountTypeDAC.cs" />
+    <Compile Include="AttendanceDAC.cs" />
+    <Compile Include="BankBranchDAC.cs" />
+    <Compile Include="BankDAC.cs" />
+    <Compile Include="BS_Level1DAC.cs" />
+    <Compile Include="BS_Level2DAC.cs" />
+    <Compile Include="ClassStreamDAC.cs" />
+    <Compile Include="ClassSubjectDAC.cs" />
+    <Compile Include="COADAC.cs" />
+    <Compile Include="CustomerDAC.cs" />
+    <Compile Include="DataAccessComponent.cs" />
+    <Compile Include="DepartmentDAC.cs" />
+    <Compile Include="DisciplinaryCategoryDAC.cs" />
+    <Compile Include="DisciplineDAC.cs" />
+    <Compile Include="EmployeeDAC.cs" />
+    <Compile Include="EmployerDAC.cs" />
+    <Compile Include="ExamDAC.cs" />
+    <Compile Include="ExamPeriodDAC.cs" />
+    <Compile Include="ExamTypeDAC.cs" />
+    <Compile Include="FeesStructureDAC.cs" />
+    <Compile Include="FeeStructureAcademicDAC.cs" />
+    <Compile Include="FeeStructureOtherDAC.cs" />
+    <Compile Include="GradingSystemDAC.cs" />
+    <Compile Include="GradingSystemDetDAC.cs" />
+    <Compile Include="InformDbDAC.cs" />
+    <Compile Include="LocationDAC.cs" />
+    <Compile Include="LocationPropertyDAC.cs" />
+    <Compile Include="MarksheetArchiveDAC.cs" />
+    <Compile Include="MarkSheetExamDAC.cs" />
+    <Compile Include="MarkSheetStudentDAC.cs" />
+    <Compile Include="ParentDAC.cs" />
+    <Compile Include="Partials\EmployeeDAC.cs" />
+    <Compile Include="Partials\EmployerDAC.cs" />
+    <Compile Include="Partials\spAllowedRoleMenusDAC.cs" />
+    <Compile Include="Partials\spUserDAC.cs" />
+    <Compile Include="Partials\spUsersInRoleDAC.cs" />
+    <Compile Include="PL_Level1DAC.cs" />
+    <Compile Include="PL_Level2DAC.cs" />
+    <Compile Include="ProgrammeDAC.cs" />
+    <Compile Include="ProgrammeYearCourseDAC.cs" />
+    <Compile Include="ProgrammeYearDAC.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisteredExamDAC.cs" />
+    <Compile Include="ReportDAC.cs" />
+    <Compile Include="ReportGroupDAC.cs" />
+    <Compile Include="ResidenceDAC.cs" />
+    <Compile Include="ResidenceHallDAC.cs" />
+    <Compile Include="ResidenceHallRoomDAC.cs" />
+    <Compile Include="RoleRightDAC.cs" />
+    <Compile Include="RoomDAC.cs" />
+    <Compile Include="RuleSetDAC.cs" />
+    <Compile Include="SBSchoolMessageDAC.cs" />
+    <Compile Include="SchoolClassDAC.cs" />
+    <Compile Include="SchoolDAC.cs" />
+    <Compile Include="SecurityQuestionDAC.cs" />
+    <Compile Include="SettingDAC.cs" />
+    <Compile Include="SettingsGroupDAC.cs" />
+    <Compile Include="SmsMessageStoreDAC.cs" />
+    <Compile Include="spAllowedReportsRolesMenusDAC.cs" />
+    <Compile Include="spAllowedRoleMenusDAC.cs" />
+    <Compile Include="spAllowedRoleMenuswebDAC.cs" />
+    <Compile Include="spMenuItemDAC.cs" />
+    <Compile Include="spMenusDAC.cs" />
+    <Compile Include="spReportsMenuItemDAC.cs" />
+    <Compile Include="spRoleDAC.cs" />
+    <Compile Include="spUserDAC.cs" />
+    <Compile Include="spUsersInRoleDAC.cs" />
+    <Compile Include="StudentDAC.cs" />
+    <Compile Include="StudentExamDAC.cs" />
+    <Compile Include="StudentProgressDAC.cs" />
+    <Compile Include="StudentProgresses_TempDAC.cs" />
+    <Compile Include="StudentsExamResultDAC.cs" />
+    <Compile Include="StudentsExamResultsDetailDAC.cs" />
+    <Compile Include="StudentsExamResultsDetail_TempDAC.cs" />
+    <Compile Include="StudentsExamResults_TempDAC.cs" />
+    <Compile Include="StudentSubjectTargetDAC.cs" />
+    <Compile Include="SubjectDAC.cs" />
+    <Compile Include="SubSubjectDAC.cs" />
+    <Compile Include="TeacherDAC.cs" />
+    <Compile Include="TechParamDAC.cs" />
+    <Compile Include="TimeTableDAC.cs" />
+    <Compile Include="TimeTableDetDAC.cs" />
+    <Compile Include="TransactionDAC.cs" />
+    <Compile Include="TransactionsAuthorizationDAC.cs" />
+    <Compile Include="TransactionTypeDAC.cs" />
+    <Compile Include="TransportDAC.cs" />
+    <Compile Include="UserDAC.cs" />
+    <Compile Include="webpages_MembershipDAC.cs" />
+    <Compile Include="webpages_OAuthMembershipDAC.cs" />
+    <Compile Include="webpages_RoleDAC.cs" />
+    <Compile Include="webpages_UsersInRoleDAC.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Shared\SBiSchoolWeb.Entities\SBiSchoolWeb.Entities.csproj">
+      <Project>{3BEF7922-536F-4ED1-9005-15A150E42183}</Project>
+      <Name>SBiSchoolWeb.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Shared\SBiSchoolWeb.Framework\SBiSchoolWeb.Framework.csproj">
+      <Project>{8CD23A9C-6C1D-4C82-9496-54CA7841881D}</Project>
+      <Name>SBiSchoolWeb.Framework</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

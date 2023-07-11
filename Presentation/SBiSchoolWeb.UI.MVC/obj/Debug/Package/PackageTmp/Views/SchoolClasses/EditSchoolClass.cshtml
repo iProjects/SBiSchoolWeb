@@ -1,0 +1,160 @@
+﻿@model SBiSchoolWeb.Entities.SchoolClass
+
+@{
+    ViewBag.Title = "Edit SchoolClass";
+    var name = Model.ClassName.ToUpper();
+}
+
+<h2 class="page-title">Edit SchoolClass - @name</h2>
+
+@using (Html.BeginForm("EditSchoolClass", "SchoolClasses", FormMethod.Post, new { enctype = "multipart/form-data", id = "Edit-schoolclass-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edit SchoolClass</legend>
+
+
+        <article class="col1">
+            <div class="pad">
+
+                <ol>
+
+                    <li>
+                        @Html.ValidationMessageFor(model => model.ShortCode)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.ClassName)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.ProgrammeYearId)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.NoOfSubjects)
+                    </li>
+                </ol>
+
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ShortCode)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ShortCode)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ClassName)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ClassName)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.ProgrammeYearId)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.ProgrammeYearId)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.NoOfSubjects)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NoOfSubjects)
+                </div>
+
+
+            </div>
+        </article>
+
+        <article class="col2">
+            <div class="pad">
+
+                <ol>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.TeacherId)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.CurrentYrLevel)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.NextYrLevel)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.Remarks)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.Status)
+                    </li>
+                </ol>
+
+
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TeacherId)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.TeacherId)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.CurrentYrLevel)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.CurrentYrLevel)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.NextYrLevel)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.NextYrLevel)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Remarks)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Remarks)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Status)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Status)
+                </div>
+
+
+            </div>
+        </article>
+
+        <p>
+            <input type="submit" value="Create" id="btnSubmit" style="float: left; clear: both" />
+        </p>
+
+    </fieldset>
+}
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+    </script>
+
+}
+
+

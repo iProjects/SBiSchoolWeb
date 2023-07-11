@@ -1,0 +1,116 @@
+﻿@model SBiSchoolWeb.Entities.Programme
+@{
+    ViewBag.Title = "Create Programme";
+}
+
+<h2 class="page-title">Create Programme</h2>
+
+@using (Html.BeginForm("CreateProgramme", "Programmes", FormMethod.Post, new { enctype = "multipart/form-data", id = "create-programme-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Create Programme</legend>
+
+
+        <ol>
+
+            <li>
+                @Html.ValidationMessageFor(model => model.Id)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Description)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Hours)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Fees)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Status)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.IsDefault)
+            </li>
+        </ol>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Hours)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Hours)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fees)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fees)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDefault)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDefault)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" id="btnSubmit" style="float: left; clear: both" />
+        </p>
+
+    </fieldset>
+}
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+

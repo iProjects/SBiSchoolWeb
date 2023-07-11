@@ -1,0 +1,144 @@
+﻿@model SBiSchoolWeb.Entities.Teacher
+
+@{
+    ViewBag.Title = "Teacher Details";
+}
+
+<h2 class="page-title"> Teacher Details</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Teacher</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IDNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IDNo)
+            @Html.ValidationMessageFor(model => model.IDNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TSCNo)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TSCNo)
+            @Html.ValidationMessageFor(model => model.TSCNo)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Position)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Position)
+            @Html.ValidationMessageFor(model => model.Position)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateJoined)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateJoined)
+            @Html.ValidationMessageFor(model => model.DateJoined)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DateLeft)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DateLeft)
+            @Html.ValidationMessageFor(model => model.DateLeft)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsLeft)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsLeft)
+            @Html.ValidationMessageFor(model => model.IsLeft)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HighestQualification)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HighestQualification)
+            @Html.ValidationMessageFor(model => model.HighestQualification)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDeleted)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDeleted)
+            @Html.ValidationMessageFor(model => model.IsDeleted)
+        </div>
+
+       
+    </fieldset>
+}
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+
+

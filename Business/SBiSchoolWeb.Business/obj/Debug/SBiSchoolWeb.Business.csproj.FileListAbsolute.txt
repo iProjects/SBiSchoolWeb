@@ -1,0 +1,15 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Business.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Business.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.csprojResolveAssemblyReference.cache
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Debug\SBiSchoolWeb.Business.pdb

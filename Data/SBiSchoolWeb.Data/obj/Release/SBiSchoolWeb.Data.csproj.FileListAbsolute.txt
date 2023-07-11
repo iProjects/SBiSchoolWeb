@@ -1,0 +1,10 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Release\SBiSchoolWeb.Data.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Release\SBiSchoolWeb.Data.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Release\SBiSchoolWeb.Data.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Release\SBiSchoolWeb.Data.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Release\SBiSchoolWeb.Data.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Release\SBiSchoolWeb.Data.pdb

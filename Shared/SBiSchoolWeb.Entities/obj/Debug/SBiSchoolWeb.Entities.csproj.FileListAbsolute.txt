@@ -1,0 +1,14 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.csprojResolveAssemblyReference.cache
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Debug\SBiSchoolWeb.Entities.pdb

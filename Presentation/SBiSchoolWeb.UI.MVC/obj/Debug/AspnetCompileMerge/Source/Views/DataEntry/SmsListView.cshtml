@@ -1,0 +1,81 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.SmsMessageStore>
+
+@{
+    ViewBag.Title = "Sms";
+}
+
+<h2 class="page-title"> Sms</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserDataText)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OriginatingAddress)
+        </th>  
+        <th>
+            @Html.DisplayNameFor(model => model.Processed)
+        </th> 
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserDataText)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OriginatingAddress)
+        </td>  
+        <td>
+            @Html.DisplayFor(modelItem => item.Processed)
+        </td> 
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+
+

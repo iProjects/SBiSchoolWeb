@@ -1,0 +1,15 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Data.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Data.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Data.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.csprojResolveAssemblyReference.cache
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Data\SBiSchoolWeb.Data\obj\Debug\SBiSchoolWeb.Data.pdb

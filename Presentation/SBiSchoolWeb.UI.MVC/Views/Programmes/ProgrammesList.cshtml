@@ -1,0 +1,111 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.Programme>
+
+@{
+    ViewBag.Title = "Programmes";
+    int Programmes = Model.Count();
+}
+
+<h2 class="page-title">Programmes [ @Programmes ]  </h2>
+
+
+<div>
+    @using (Html.BeginForm("CreateProgramme", "Programmes", FormMethod.Get, new { enctype = "multipart/form-data", id = "data-entry-create-programme-form" }))
+    { 
+        <p>
+            <a id="btnSubmitCreateProgrammeForm" style="cursor: pointer;" title="Create Programme">Create Programme</a>
+        </p> 
+         
+    }
+</div>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fees)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDefault)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fees)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsDefault)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditProgramme", new { id = item.Id }) |
+            @Html.ActionLink("Details", "ProgrammeDetails", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "DeleteProgramme", new { id = item.Id, description = item.Description })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+
+        $("#btnSubmitCreateProgrammeForm").on("click", function (e) {
+
+            e.preventDefault();
+
+            $("#progress").removeClass('displaynone');
+            $("#progress").addClass('displayblock');
+            $("#progress").show();
+
+            $("#data-entry-create-programme-form").submit();
+
+        });
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+

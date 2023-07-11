@@ -1,0 +1,56 @@
+﻿@model SBiSchoolWeb.UI.MVC.Models.ConfirmDeleteModel
+
+@{
+    ViewBag.Title = "Confirm Delete";
+    var Employer = Model.Description.ToUpper(); 
+}
+
+<h2 class="page-title">Confirm Delete Employer - @Employer </h2>
+
+@using (Html.BeginForm("UploadEmployerLogo", "DataEntry", FormMethod.Post, new { enctype = "multipart/form-data", id = "form-upload-logo" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Confirm Delete</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <p>
+            <input type="submit" value="Delete"  id="btnSubmit"  />
+        </p>
+    </fieldset>
+}
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () { 
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,10 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Designers\obj\Debug\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Designers\obj\Debug\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Designers\obj\Debug\SBiSchoolWeb.Workflows.Designers.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Designers\obj\Debug\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Designers\obj\Debug\SBiSchoolWeb.Workflows.Activities.VisualStudio.Design.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Designers\obj\Debug\SBiSchoolWeb.Workflows.Designers.csprojResolveAssemblyReference.cache

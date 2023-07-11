@@ -1,0 +1,10 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Release\SBiSchoolWeb.Business.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Release\SBiSchoolWeb.Business.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Release\SBiSchoolWeb.Business.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Business.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Release\SBiSchoolWeb.Business.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Release\SBiSchoolWeb.Business.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Business\obj\Release\SBiSchoolWeb.Business.pdb

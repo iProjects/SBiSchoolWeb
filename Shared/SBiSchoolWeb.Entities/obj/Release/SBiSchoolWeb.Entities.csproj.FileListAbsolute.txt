@@ -1,0 +1,10 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Release\SBiSchoolWeb.Entities.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Release\SBiSchoolWeb.Entities.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Release\SBiSchoolWeb.Entities.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Entities.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Release\SBiSchoolWeb.Entities.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Release\SBiSchoolWeb.Entities.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Entities\obj\Release\SBiSchoolWeb.Entities.pdb

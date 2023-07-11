@@ -1,0 +1,134 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.RegisteredExam>
+
+@{
+    ViewBag.Title = "Registered Exams";
+    int RegisteredExams = Model.Count();
+}
+
+<h2 class="page-title"> Registered Exams [ @RegisteredExams ] </h2>
+
+ 
+<table >
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamTypeId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoomId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExamDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Invilgilator)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ContributionFlag)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Contribution)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutOf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModified)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamTypeId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RoomId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExamDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Invilgilator)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ContributionFlag)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Contribution)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OutOf)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModified)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+
+

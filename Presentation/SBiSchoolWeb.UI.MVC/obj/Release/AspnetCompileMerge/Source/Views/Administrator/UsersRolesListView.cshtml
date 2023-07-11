@@ -1,0 +1,98 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.UsersInRoleModel>
+
+@{
+    ViewBag.Title = "Users Roles";
+    int Userscount = Model.Count();
+}
+
+<h2 class="page-title">Users Roles [ @Userscount ]  </h2>
+
+
+<div>
+    @using (Html.BeginForm("CreateUSerRole", "Administrator", FormMethod.Get, new { enctype = "multipart/form-data", id = "admin-create-user-role-form" }))
+    { 
+        <p>
+            <a id="btnSubmitCreateUSerRoleForm" style="cursor: pointer;" title="Create User Role">Create New</a>
+            @*@Html.ActionLink("Create User Role", "CreateUSerRole") *@
+        </p> 
+         
+    }
+</div>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RoleName)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RoleName)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "UserRoleDetails", new { userid = item.UserId, roleid = item.RoleId }) | 
+    @Html.ActionLink("Delete", "DeleteUserRole", new { userid = item.UserId, roleid = item.RoleId })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#loading").hide();
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+
+        $("#btnSubmitCreateUSerRoleForm").on("click", function (e) {
+
+            e.preventDefault();
+
+            $("#progress").removeClass('displaynone');
+            $("#progress").addClass('displayblock');
+            $("#progress").show();
+
+            $("#admin-create-user-role-form").submit();
+
+        });
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+

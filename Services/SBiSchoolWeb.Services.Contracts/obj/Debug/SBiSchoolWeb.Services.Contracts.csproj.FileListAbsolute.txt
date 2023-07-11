@@ -1,0 +1,10 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Services.Contracts.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Services.Contracts.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Services\SBiSchoolWeb.Services.Contracts\obj\Debug\SBiSchoolWeb.Services.Contracts.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Services\SBiSchoolWeb.Services.Contracts\obj\Debug\SBiSchoolWeb.Services.Contracts.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Services\SBiSchoolWeb.Services.Contracts\obj\Debug\SBiSchoolWeb.Services.Contracts.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Services.Contracts.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Services.Contracts.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Services\SBiSchoolWeb.Services.Contracts\obj\Debug\SBiSchoolWeb.Services.Contracts.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Services\SBiSchoolWeb.Services.Contracts\obj\Debug\SBiSchoolWeb.Services.Contracts.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Services\SBiSchoolWeb.Services.Contracts\obj\Debug\SBiSchoolWeb.Services.Contracts.csprojResolveAssemblyReference.cache

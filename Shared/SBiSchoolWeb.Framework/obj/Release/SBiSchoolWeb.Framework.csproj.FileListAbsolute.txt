@@ -1,0 +1,10 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Release\SBiSchoolWeb.Framework.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Release\SBiSchoolWeb.Framework.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Release\SBiSchoolWeb.Framework.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Release\SBiSchoolWeb.Framework.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Release\SBiSchoolWeb.Framework.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Release\SBiSchoolWeb.Framework.pdb

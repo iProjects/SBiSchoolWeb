@@ -1,0 +1,91 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.Student>
+
+@{
+    ViewBag.Title = "Students";
+    int Students = Model.Count();
+}
+
+<h2 class="page-title"> Students [ @Students ]  </h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateStudent")
+</p>
+<table>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AdminNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentSurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentOtherNames)
+        </th>  
+        <th>
+            @Html.DisplayNameFor(model => model.KCPE)
+        </th>    
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentSurName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentOtherNames)
+        </td>   
+        <td>
+            @Html.DisplayFor(modelItem => item.KCPE)
+        </td> 
+        <td>
+            @Html.ActionLink("Edit", "EditStudent", new { id=item.Id }) |
+            @Html.ActionLink("Details", "StudentDetails", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "DeleteStudent", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+
+

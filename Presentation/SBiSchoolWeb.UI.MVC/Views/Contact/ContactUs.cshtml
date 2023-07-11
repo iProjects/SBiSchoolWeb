@@ -1,0 +1,135 @@
+﻿@model SBiSchoolWeb.UI.MVC.Models.ContactUsModel
+
+@{
+    ViewBag.Title = "Contact Us";
+}
+
+<h2 class="page-title">Contact Us</h2>
+
+<div id="ContactUsFormContainer">
+
+    @using (Html.BeginForm("ContactUs", "Contact", FormMethod.Post, new { enctype = "multipart/form-data", id = "contact-us-form" }))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Contact Us</legend>
+
+            <article class="col1">
+                <div class="pad">
+
+                    <ol>
+
+                        <li>
+                            @Html.ValidationMessageFor(model => model.FirstName)
+                        </li>
+                        <li>
+                            @Html.ValidationMessageFor(model => model.LastName)
+                        </li>
+                        <li>
+                            @Html.ValidationMessageFor(model => model.Phone)
+                        </li>
+                        <li>
+                            @Html.ValidationMessageFor(model => model.Email)
+                        </li>
+
+                    </ol>
+
+
+                    <div class="inputSmBox">
+                        <h3>*Your First Name:</h3>
+                        @Html.TextBoxFor(x => x.FirstName)
+                    </div>
+
+                    <div class="inputSmBox">
+                        <h3>*Your Last Name:</h3>
+                        @Html.TextBoxFor(x => x.LastName)
+                    </div>
+
+                    <div class="inputSmBox">
+                        <h3>*Your Phone Number:</h3>
+                        @Html.EditorFor(model => model.Phone)
+                    </div>
+
+                    <div class="inputSmBox">
+                        <h3>*Your Email Address:</h3>
+                        @Html.TextBoxFor(x => x.Email)
+                    </div>
+
+                </div>
+            </article>
+
+            <article class="col2">
+                <div class="pad">
+
+                    <ol>
+
+                        <li>
+                            @Html.ValidationMessageFor(model => model.Subject)
+                        </li>
+                        <li>
+                            @Html.ValidationMessageFor(model => model.Comment)
+                        </li>
+
+                    </ol>
+
+                    <div class="inputSmBox" style="width: 100px;">
+                        <h3>*Subject:</h3>
+                        @Html.TextBoxFor(x => x.Subject)
+                    </div>
+
+                    <div class="inputSmBox" style="width: 100px;">
+                        <h3>*Type your comments below:</h3>
+                        @Html.EditorFor(x => x.Comment, new { multiple = "multiple" })
+                    </div>
+
+                </div>
+            </article>
+
+            <p>
+                <input type="submit" value="Register" id="btnSubmitRegisterForm" style="float: left; clear: both" />
+            </p>
+
+
+        </fieldset>
+    
+     
+    }
+
+</div>
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+﻿@{
+    ViewBag.Title = "Home";
+}
+
+
+@section featured {
+    <section class="featured">
+        <div class="content-wrapper">
+
+            <hgroup class="title">
+                <h1>Soft Books School.</h1>
+                <h2>@ViewBag.Message</h2>
+            </hgroup>
+
+            <hgroup class="title">
+                <h2 class="page-title">How Soft Books School works</h2>
+            </hgroup>
+
+
+            <div>
+                <p>
+                    Soft Books School is a school management software that has been designed to address key and critical aspects of information processing, retrieval and storage that define the core business of the school as an organization in a systematic, timely and coordinated manner.<br>
+                    It is particularly important for institutions which have invested in computers, that the software would provide value-addition to their investment and maximize the use and application of computers as office productivity tools.
+Soft Books School has been developed  in order to ease day to day activities.
+                    <br>
+                    It also provides greater visibility of all the functions, such as grading and attendance, and evaluation of reports at any point of the school year.<br>
+                    At present, attendance, grading, lesson planning and other key activities are very tedious and time consuming and need to be done repetitively.<br>
+                    Moreover, Soft Books School  will prevent all overheads, repetitive work, and provide you more time to focus on teaching or constructive activities. This also helps to ensure that you have all the tools needed to effectively build a solid overall growth path for your students while also focusing on your own career.
+                </p>
+            </div>
+
+
+            <div>
+
+                <img src="~/Images/images.jpg" alt="" />
+
+                <ol class="round">
+                    <li class="one">
+                        <h5>Join SBiSchool!</h5>
+                        Enter your details on the register screen by clicking @Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })
+                    </li>
+
+                    <li class="two">
+                        <h5>Complete Your Profile</h5>
+                        After clicking register you will automatically be redirected to the home page, click on @Html.ActionLink("My Profile", "EditProfile", "Account") and complete your profile by clicking edit
+                    </li>
+                </ol>
+
+            </div>
+
+
+
+
+        </div>
+    </section>
+}
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+    </script>
+
+}
+

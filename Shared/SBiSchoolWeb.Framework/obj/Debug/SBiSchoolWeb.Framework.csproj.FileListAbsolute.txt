@@ -1,0 +1,14 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\bin\SBiSchoolWeb.Framework.pdb
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.csprojResolveAssemblyReference.cache
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.dll
+D:\wakxpx\csharp\visualstudio\2013\SBiSchoolWeb\Shared\SBiSchoolWeb.Framework\obj\Debug\SBiSchoolWeb.Framework.pdb

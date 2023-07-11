@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3BEF7922-536F-4ED1-9005-15A150E42183}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SBiSchoolWeb.Entities</RootNamespace>
+    <AssemblyName>SBiSchoolWeb.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Account.cs" />
+    <Compile Include="AccountType.cs" />
+    <Compile Include="Attendance.cs" />
+    <Compile Include="Bank.cs" />
+    <Compile Include="BankBranch.cs" />
+    <Compile Include="BS_Level1.cs" />
+    <Compile Include="BS_Level2.cs" />
+    <Compile Include="ClassStream.cs" />
+    <Compile Include="ClassSubject.cs" />
+    <Compile Include="COA.cs" />
+    <Compile Include="Customer.cs" />
+    <Compile Include="Department.cs" />
+    <Compile Include="DisciplinaryCategory.cs" />
+    <Compile Include="Discipline.cs" />
+    <Compile Include="Employee.cs" />
+    <Compile Include="Employer.cs" />
+    <Compile Include="Exam.cs" />
+    <Compile Include="ExamPeriod.cs" />
+    <Compile Include="ExamType.cs" />
+    <Compile Include="FeesStructure.cs" />
+    <Compile Include="FeeStructureAcademic.cs" />
+    <Compile Include="FeeStructureOther.cs" />
+    <Compile Include="GradingSystem.cs" />
+    <Compile Include="GradingSystemDet.cs" />
+    <Compile Include="InformDb.cs" />
+    <Compile Include="Location.cs" />
+    <Compile Include="LocationProperty.cs" />
+    <Compile Include="MarksheetArchive.cs" />
+    <Compile Include="MarkSheetExam.cs" />
+    <Compile Include="MarkSheetStudent.cs" />
+    <Compile Include="MembershipModel.cs" />
+    <Compile Include="OAuthMembershipModel.cs" />
+    <Compile Include="Parent.cs" />
+    <Compile Include="Partials\Employee.cs" />
+    <Compile Include="Partials\spUsersInRole.cs" />
+    <Compile Include="PL_Level1.cs" />
+    <Compile Include="PL_Level2.cs" />
+    <Compile Include="Programme.cs" />
+    <Compile Include="ProgrammeYear.cs" />
+    <Compile Include="ProgrammeYearCourse.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisteredExam.cs" />
+    <Compile Include="Report.cs" />
+    <Compile Include="ReportGroup.cs" />
+    <Compile Include="Residence.cs" />
+    <Compile Include="ResidenceHall.cs" />
+    <Compile Include="ResidenceHallRoom.cs" />
+    <Compile Include="RoleModel.cs" />
+    <Compile Include="RoleRight.cs" />
+    <Compile Include="Room.cs" />
+    <Compile Include="RuleSet.cs" />
+    <Compile Include="SBSchoolMessage.cs" />
+    <Compile Include="School.cs" />
+    <Compile Include="SchoolClass.cs" />
+    <Compile Include="SecurityQuestion.cs" />
+    <Compile Include="Setting.cs" />
+    <Compile Include="SettingsGroup.cs" />
+    <Compile Include="SmsMessageStore.cs" />
+    <Compile Include="spAllowedReportsRolesMenus.cs" />
+    <Compile Include="spAllowedRoleMenus.cs" />
+    <Compile Include="spAllowedRoleMenusweb.cs" />
+    <Compile Include="spMenuItem.cs" />
+    <Compile Include="spMenus.cs" />
+    <Compile Include="spReportsMenuItem.cs" />
+    <Compile Include="spRole.cs" />
+    <Compile Include="spUser.cs" />
+    <Compile Include="spUsersInRole.cs" />
+    <Compile Include="Student.cs" />
+    <Compile Include="StudentExam.cs" />
+    <Compile Include="StudentProgress.cs" />
+    <Compile Include="StudentProgresses_Temp.cs" />
+    <Compile Include="StudentsExamResult.cs" />
+    <Compile Include="StudentsExamResultsDetail.cs" />
+    <Compile Include="StudentsExamResultsDetail_Temp.cs" />
+    <Compile Include="StudentsExamResults_Temp.cs" />
+    <Compile Include="StudentSubjectTarget.cs" />
+    <Compile Include="Subject.cs" />
+    <Compile Include="SubSubject.cs" />
+    <Compile Include="Teacher.cs" />
+    <Compile Include="TechParam.cs" />
+    <Compile Include="TimeTable.cs" />
+    <Compile Include="TimeTableDet.cs" />
+    <Compile Include="Transaction.cs" />
+    <Compile Include="TransactionsAuthorization.cs" />
+    <Compile Include="TransactionType.cs" />
+    <Compile Include="Transport.cs" />
+    <Compile Include="User.cs" />
+    <Compile Include="UsersInRoleModel.cs" />
+    <Compile Include="webpages_Membership.cs" />
+    <Compile Include="webpages_OAuthMembership.cs" />
+    <Compile Include="webpages_Role.cs" />
+    <Compile Include="webpages_UsersInRole.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

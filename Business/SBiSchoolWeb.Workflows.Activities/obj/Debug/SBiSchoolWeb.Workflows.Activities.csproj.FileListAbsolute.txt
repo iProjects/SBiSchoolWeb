@@ -1,0 +1,10 @@
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.pdb
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Activities\obj\Debug\SBiSchoolWeb.Workflows.Activities.csprojResolveAssemblyReference.cache
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Activities\obj\Debug\SBiSchoolWeb.Workflows.Activities.dll
+D:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Activities\obj\Debug\SBiSchoolWeb.Workflows.Activities.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\bin\SBiSchoolWeb.Workflows.Activities.pdb
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Activities\obj\Debug\SBiSchoolWeb.Workflows.Activities.csprojResolveAssemblyReference.cache
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Activities\obj\Debug\SBiSchoolWeb.Workflows.Activities.dll
+C:\Dev\SBiSchoolWeb\SBiSchoolWeb\Business\SBiSchoolWeb.Workflows.Activities\obj\Debug\SBiSchoolWeb.Workflows.Activities.pdb

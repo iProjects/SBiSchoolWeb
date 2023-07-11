@@ -1,0 +1,417 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.Student>
+
+@{
+    ViewBag.Title = "AdmissionsListView";
+}
+
+<h2 class="page-title"> AdmissionsListView</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.SchoolId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ClassStreamId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdminNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentSurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentOtherNames)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateOfBirth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Homepage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmissionType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KCPE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KCSE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmissionDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AdmittedBy)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Remarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastModifiedTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GLAccountId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CustomerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherCellPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherOfficePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FatherEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherCellPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherOfficePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MotherEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuardianName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuardianCellPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuardianOfficePhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.GuardianEmail)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevSchoolId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevSchoolName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevSchoolPhone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrevSchoolAddress)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ReasonForLeaving)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraCurricular1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraCurricular2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ExtraCurricular3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term1MeanGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term2MeanGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Term3MeanGrade)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eligible)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RequireTransport)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TransportChargeType)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FeesPayPlan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Boarder)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResidenceHallRoomId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ResidenceId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DoctorName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ailments)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Foods)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Allergies)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.HostelName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BedNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsDeleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SchoolId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ClassStreamId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdminNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentSurName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentOtherNames)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateOfBirth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Homepage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.StudentAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmissionType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KCPE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.KCSE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmissionDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AdmittedBy)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Remarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Photo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastModifiedTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GLAccountId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CustomerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherCellPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherOfficePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FatherEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherCellPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherOfficePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MotherEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuardianName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuardianCellPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuardianOfficePhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.GuardianEmail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevSchoolId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevSchoolName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevSchoolPhone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrevSchoolAddress)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ReasonForLeaving)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraCurricular1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraCurricular2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ExtraCurricular3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Term1MeanGrade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Term2MeanGrade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Term3MeanGrade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eligible)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RequireTransport)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TransportChargeType)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FeesPayPlan)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Boarder)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResidenceHallRoomId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ResidenceId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DoctorName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ailments)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Foods)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Allergies)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.HostelName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BedNo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsDeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+
+

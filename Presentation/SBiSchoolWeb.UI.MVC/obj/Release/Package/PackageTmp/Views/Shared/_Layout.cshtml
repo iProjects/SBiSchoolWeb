@@ -1,0 +1,929 @@
+﻿@using SBiSchoolWeb.UI.MVC.Controllers
+
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title - Soft Books School</title>
+    <link href="~/SchoolStudents.ico" rel="shortcut icon" type="image/x-icon" />
+
+    @Styles.Render("~/bundles/_AllStyles")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/MicrosoftAjax")
+    @Scripts.Render("~/bundles/dataTables")
+    @Scripts.Render("~/bundles/tablesorter")
+    @Scripts.Render("~/bundles/CustomScripts")
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <div class="content-wrapper">
+            <div class="float-left">
+
+                <p class="site-title">
+                    Soft Books School
+                </p>
+
+                <div class="site-logo">
+                    @{
+                        DataEntryController dc = new DataEntryController();
+                        string employerlogo = dc.GetEmployerLogo();
+
+                        if (employerlogo != null)
+                        {
+                            FileInfo logoInfo = new FileInfo(Path.Combine(Server.MapPath("/Images"), employerlogo));
+                            if (logoInfo.Exists)
+                            {
+                                string directoryName = Path.GetDirectoryName(employerlogo);
+                                if (directoryName.StartsWith(@"C:\", true, System.Globalization.CultureInfo.InvariantCulture))
+                                { 
+                        <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" />
+                                }
+                                else
+                                {
+                        <img src="~/Images/@employerlogo" alt="Software Providers" width="300" height="100" style="position:relative;clear:none;float:none;"/>  
+                        <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" style="position: relative; clear: none; float: none;" />
+                                }
+                            }
+                            else
+                            {
+                        <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" />
+                            }
+                        }
+                        else
+                        { 
+                        <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" />
+                        } 
+                    }
+
+                </div>
+
+            </div>
+
+
+            <div id="progress" style="margin: 0px; padding: 0px; position: fixed; right: 0px; top: 0px; width: 100%; height: 100%; background-color: cornflowerblue; z-index: 30001; opacity: .8; filter: alpha(opacity=70);" class="displaynone">
+                <p style="position: absolute; top: 30%; left: 35%; color: White;">
+                    <img src="@Url.Content("~/Images/ajax-loader.gif")" width="50" height="50" style="position: absolute;clear:both; ">
+                </p>
+            </div>
+
+
+            <div class="float-right">
+                <section id="login">
+                    @Html.Partial("_LoginPartial")
+                </section>
+            </div>
+
+
+            <div id="nav">
+                <ul id="menu">
+
+                    <li>
+
+                        <div class="floatleft">
+                            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { enctype = "multipart/form-data", id = "home-form" }))
+                            { 
+                                <div>
+                                    <a id="btnSubmitIndexForm" style="cursor: pointer;">Home</a>
+                                </div>    
+                            }
+                        </div>
+
+                    </li>
+
+
+                    @{
+                        if (Request.IsAuthenticated)
+                        {
+                            AdministratorController ac = new AdministratorController();
+
+                            string email = User.Identity.Name;
+
+                            if (ac._IsRoleMenusAllowed(email, "mnuDataEntry"))
+                            {
+                        <li id="mnuDataEntry"><a>Data Entry</a>
+                            <ul class="submenu">
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuSubjects"))
+                                {
+                                    <li id="subMenuSubjects">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllSubjects", "Subjects", FormMethod.Get, new { enctype = "multipart/form-data", id = "subjects-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllSubjectsForm" style="cursor: pointer;">Subjects</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuProgrammes"))
+                                {
+                                    <li id="subMenuProgrammes">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllProgrammes", "Programmes", FormMethod.Get, new { enctype = "multipart/form-data", id = "programmes-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllProgrammesForm" style="cursor: pointer;">Programmes</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuTeachers"))
+                                {
+                                    <li id="subMenuTeachers">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllTeachers", "Teachers", FormMethod.Get, new { enctype = "multipart/form-data", id = "teachers-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllTeachersForm" style="cursor: pointer;">Teachers</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuSchoolClasses"))
+                                {
+                                    <li id="subMenuSchoolClasses">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllSchoolClasses", "SchoolClasses", FormMethod.Get, new { enctype = "multipart/form-data", id = "school-classes-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllSchoolClassesForm" style="cursor: pointer;">Classes</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuStudents"))
+                                {
+                                    <li id="subMenuStudents">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllStudents", "Students", FormMethod.Get, new { enctype = "multipart/form-data", id = "students-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllStudentsForm" style="cursor: pointer;">Students</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuCustomers"))
+                                {
+                                    <li id="subMenuCustomers">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllCustomers", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "customers-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllCustomersForm" style="cursor: pointer;">Customers</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuGradingSystems"))
+                                {
+                                    <li id="subMenuGradingSystems">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllGradingSystems", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "grading-systems-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllGradingSystemsForm" style="cursor: pointer;">Grading</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuAttendance"))
+                                {
+                                    <li id="subMenuAttendance">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllAttendances", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "attendance-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllAttendancesForm" style="cursor: pointer;">Attendance</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuRooms"))
+                                {
+                                    <li id="subMenuRooms">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllRooms", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "rooms-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllRoomsForm" style="cursor: pointer;">Rooms</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuLocations"))
+                                {
+                                    <li id="subMenuLocations">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllLocations", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "locations-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllLocationsForm" style="cursor: pointer;">Locations</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuDisciplineCategories"))
+                                {
+                                    <li id="subMenuDisciplineCategories">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllDisciplineCategories", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "displine-categories-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllDisciplineCategoriesForm" style="cursor: pointer;">Discipline Categories</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                            }
+
+
+                            if (ac._IsRoleMenusAllowed(email, "mnuExams"))
+                            {
+                        <li id="mnuExams"><a>Exams</a>
+                            <ul class="submenu">
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuExamPeriods"))
+                                {
+                                    <li id="subMenuExamPeriods">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllExamPeriods", "ExamPeriods", FormMethod.Get, new { enctype = "multipart/form-data", id = "exam-periods-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllExamPeriodsForm" style="cursor: pointer;">Exam Periods</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuExamTypes"))
+                                {
+                                    <li id="subMenuExamTypes">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllExamTypes", "ExamTypes", FormMethod.Get, new { enctype = "multipart/form-data", id = "exam-types-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllExamTypesForm" style="cursor: pointer;">ExamTypes</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuExams"))
+                                {
+                                    <li id="subMenuExams">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllExams", "Exams", FormMethod.Get, new { enctype = "multipart/form-data", id = "exams-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllExamsForm" style="cursor: pointer;">Exams</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuRegisteredStudents"))
+                                {
+                                    <li id="subMenuRegisteredStudents">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllRegisteredStudents", "Exams", FormMethod.Get, new { enctype = "multipart/form-data", id = "registered-students-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllRegisteredStudents" style="cursor: pointer;">Register Students</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuMarkSheet"))
+                                {
+                                    <li id="subMenuMarkSheet">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllMarkSheet", "Exams", FormMethod.Get, new { enctype = "multipart/form-data", id = "mark-sheet-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllMarkSheetForm" style="cursor: pointer;">MarkSheet</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuProcessedExams"))
+                                {
+                                    <li id="subMenuProcessedExams">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllProcessedExams", "Exams", FormMethod.Get, new { enctype = "multipart/form-data", id = "process-exams-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllProcessedExamsForm" style="cursor: pointer;">Process Exams</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                            }
+
+
+                            if (ac._IsRoleMenusAllowed(email, "mnuFees"))
+                            {
+                        <li id="mnuFees"><a>Fees</a>
+                            <ul class="submenu">
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuFees"))
+                                {
+                                    <li id="subMenuFees">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllFeeStructures", "Fees", FormMethod.Get, new { enctype = "multipart/form-data", id = "fee-structure-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllFeeStructuresForm" style="cursor: pointer;">Fee Structure</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuAdmission"))
+                                {
+                                    <li id="subMenuAdmission">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllAdmissions", "Fees", FormMethod.Get, new { enctype = "multipart/form-data", id = "admissions-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllAdmissionsForm" style="cursor: pointer;">Admission</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                            }
+
+
+
+                            if (ac._IsRoleMenusAllowed(email, "mnuAccounting"))
+                            {
+                        <li id="mnuAccounting"><a>Accounting</a>
+                            <ul class="submenu">
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuChartOfAccounts"))
+                                {
+                                    <li id="subMenuChartOfAccounts">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllChartOfAccounts", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "chart-of-accounts-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllChartOfAccountsForm" style="cursor: pointer;">Chart Of Accounts</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuAccounts"))
+                                {
+                                    <li id="subMenuAccounts">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllAccounts", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "accounts-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllAccountsForm" style="cursor: pointer;">Accounts</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuAccountTypes"))
+                                {
+                                    <li id="subMenuAccountTypes">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllAccountTypes", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "account-types-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllAccountTypesForm" style="cursor: pointer;">Account Types</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuTransactionTypes"))
+                                {
+                                    <li id="subMenuTransactionTypes">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllTransactionTypes", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "transaction-types-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllTransactionTypesForm" style="cursor: pointer;">Transaction Types</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuTransactionsAuthorizations"))
+                                {
+                                    <li id="subMenuTransactionsAuthorizations">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllTransactionsAuthorizations", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "transactions-authorization-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllTransactionsAuthorizationsForm" style="cursor: pointer;">Transactions Authorizations</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuBanks"))
+                                {
+                                    <li id="subMenuBanks">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllBanks", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "banks-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllBanksForm" style="cursor: pointer;">Banks</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuEnquiry"))
+                                {
+                                    <li id="subMenuEnquiry">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllEnquiries", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "enquiry-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllEnquiriesForm" style="cursor: pointer;">Enquiry</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuPayFees"))
+                                {
+                                    <li id="subMenuPayFees">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllPayFees", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "pay-fees-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllPayFeesForm" style="cursor: pointer;">Pay Fees</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuGeneralPosts"))
+                                {
+                                    <li id="subMenuGeneralPosts">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllGeneralPosts", "Accountings", FormMethod.Get, new { enctype = "multipart/form-data", id = "general-posts-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllGeneralPostsForm" style="cursor: pointer;">General Posts</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                            }
+
+
+
+                            if (ac._IsRoleMenusAllowed(email, "mnuTechnical"))
+                            {
+                        <li id="mnuTechnical"><a>Technical</a>
+                            <ul class="submenu">
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuSMS"))
+                                {
+                                    <li id="subMenuSMS">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllSMS", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "sms-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllSMSForm" style="cursor: pointer;">SMS</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuReports"))
+                                {
+                                    <li id="subMenuReports">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllReports", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "reports-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllReportsForm" style="cursor: pointer;">Reports</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuSchools"))
+                                {
+                                    <li id="subMenuSchools">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllSchools", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "schools-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllSchoolsForm" style="cursor: pointer;">Schools</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuSettings"))
+                                {
+                                    <li id="subMenuSettings">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllSettings", "Administrator", FormMethod.Get, new { enctype = "multipart/form-data", id = "settings-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllSettingsForm" style="cursor: pointer;">Settings</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuTimeTables"))
+                                {
+                                    <li id="subMenuTimeTables">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllTimeTables", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "time-table-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllTimeTablesForm" style="cursor: pointer;">Time Table</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                            </ul>
+                        </li>
+                            }
+
+
+
+                            if (ac._IsRoleMenusAllowed(email, "mnuAdministrator"))
+                            {
+                        <li id="mnuAdministrator"><a>Administrator</a>
+                            <ul class="submenu">
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuEmployers"))
+                                {
+                                    <li id="subMenuEmployers">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllEmployers", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "employers-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllEmployersForm" style="cursor: pointer;">Employers</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuEmployees"))
+                                {
+                                    <li id="subMenuEmployees">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllEmployees", "DataEntry", FormMethod.Get, new { enctype = "multipart/form-data", id = "employees-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllEmployeesForm" style="cursor: pointer;">Employees</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuRoles"))
+                                {
+                                    <li id="subMenuRoles">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllRoles", "Administrator", FormMethod.Get, new { enctype = "multipart/form-data", id = "roles-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllRolesForm" style="cursor: pointer;">Roles</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuUsers"))
+                                {
+                                    <li id="subMenuUsers">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllUsers", "Administrator", FormMethod.Get, new { enctype = "multipart/form-data", id = "users-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllUsersForm" style="cursor: pointer;">Users</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li>
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuUsersRoles"))
+                                {
+                                    <li id="subMenuUsersRoles">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllUSersRoles", "Administrator", FormMethod.Get, new { enctype = "multipart/form-data", id = "user-roles-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllUSersRolesForm" style="cursor: pointer;">Users Roles</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li> 
+                                }
+                                @if (ac._IsRoleMenusAllowed(email, "subMenuRights"))
+                                {
+                                    <li id="subMenuRights">
+
+                                        <div class="floatleft">
+                                            @using (Html.BeginForm("GetAllRights", "Administrator", FormMethod.Get, new { enctype = "multipart/form-data", id = "rights-form" }))
+                                            { 
+                                                <div>
+                                                    <a id="btnSubmitGetAllRightsForm" style="cursor: pointer;">Rights</a>
+                                                </div>    
+                                            }
+                                        </div>
+
+                                    </li> 
+                                    
+                                }
+                            </ul>
+                        </li>
+                            }
+
+                        }
+                    }
+
+
+
+
+                    <li><a>Help</a>
+                        <ul class="submenu">
+
+                            <li>
+
+                                <div class="floatleft">
+                                    @using (Html.BeginForm("Help", "Home", FormMethod.Get, new { enctype = "multipart/form-data", id = "help-form" }))
+                                    { 
+                                        <div>
+                                            <a id="btnSubmitHelpForm" style="cursor: pointer;">Help</a>
+                                        </div>    
+                                    }
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="floatleft">
+                                    @using (Html.BeginForm("ContactUs", "Home", FormMethod.Get, new { enctype = "multipart/form-data", id = "contact-us-form" }))
+                                    { 
+                                        <div>
+                                            <a id="btnSubmitContactUsForm" style="cursor: pointer;">Contact Us</a>
+                                        </div>    
+                                    }
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="floatleft">
+                                    @using (Html.BeginForm("Contact", "Home", FormMethod.Get, new { enctype = "multipart/form-data", id = "contacts-form" }))
+                                    { 
+                                        <div>
+                                            <a id="btnSubmitContactsForm" style="cursor: pointer;">Contacts</a>
+                                        </div>    
+                                    }
+                                </div>
+
+                            </li>
+
+                            <li>
+
+                                <div class="floatleft">
+                                    @using (Html.BeginForm("About", "Home", FormMethod.Get, new { enctype = "multipart/form-data", id = "about-form" }))
+                                    { 
+                                        <div>
+                                            <a id="btnSubmitAboutForm" style="cursor: pointer;">About</a>
+                                        </div>    
+                                    }
+                                </div>
+
+                            </li>
+
+                        </ul>
+                    </li>
+
+
+                </ul>
+            </div>
+
+
+        </div>
+
+    </header>
+
+    <div id="body">
+
+
+        @RenderSection("featured", required: false)
+        <section class="content-wrapper main-content clear-fix">
+
+            <div id="error-display-div" class="displaynone">
+            </div>
+
+            @RenderBody()
+
+        </section>
+
+
+    </div>
+
+    <footer>
+
+        <hr />
+
+        <div class="content-wrapper">
+            <div class="float-left">
+
+                @Html.ActionLink("Home", "Index", "Home")|
+                   @Html.ActionLink("About", "About", "Home")|
+                   @Html.ActionLink("Contacts", "Contact", "Home")|
+                   @Html.ActionLink("Contact Us", "ContactUs", "Home")|
+                   @Html.ActionLink("Help", "Help", "Home")|
+                   @Html.ActionLink("SiteMap", "SiteMap", "Home")|                   
+                  <a href="https://www.facebook.com/SoftwareProvidersLtd" title="Facebook" target="_blank">FaceBook</a>|
+                  <a href="http://twitter.com/" title="Twitter" target="_blank">Twitter</a>|
+                  <a href="https://plus.google.com/" title="Google+" target="_blank">Google+</a>|
+                  <a href="http://www.linkedin.com/" title="LinkedIn" target="_blank">LinkedIn</a>|
+                  <a href="#" title="Blog">Blog</a>|
+                  <a href="#" title="Discussion board">Discussion board</a> |
+                  <a href="#" title="Press">Press</a>|
+                  <a href="#" title="Terms">Terms</a>|                    
+                  <a href="#" title="Jobs">Jobs</a>|                    
+                  <a href="#" title="Privacy policy">Privacy policy</a>|
+                  <a href="#" title="Principles">Principles</a>
+
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p style="font-size: 15px">Copyright &copy; @DateTime.Now.Year - Software Providers Limited. All Rights Reserved.</p>
+            </div>
+        </div>
+
+        <div class="content-wrapper clearboth">
+            <div>
+                @if (Request.IsAuthenticated)
+                {
+                    AdministratorController ac = new AdministratorController();
+                    string username = User.Identity.Name;
+                    string userphoto = ac.GetUserPhoto(username);
+
+                    if (userphoto != null)
+                    {
+                        FileInfo photoInfo = new FileInfo(Path.Combine(Server.MapPath("/Images"), userphoto));
+                        if (photoInfo.Exists)
+                        {
+                            string directoryName = Path.GetDirectoryName(userphoto);
+                            if (directoryName.StartsWith(@"C:\", true, System.Globalization.CultureInfo.InvariantCulture))
+                            { 
+                    <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" />
+                            }
+                            else
+                            {
+                    <img src="~/Images/@userphoto" alt="Software Providers" width="300" height="100" style="float: left;padding:10px 10px 10px 10px;"/>  
+                    <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" style="float: left; padding: 10px 10px 10px 10px;" />
+                            }
+                        }
+                        else
+                        {
+                    <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" />
+                        }
+                    }
+                    else
+                    { 
+                    <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" />
+                    }
+                }
+                else
+                {
+                    <img src="~/Images/sp_logo_with_info.jpg" alt="Software Providers" width="300" height="100" />
+                }
+            </div>
+        </div>
+
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+
+</body>
+
+</html>

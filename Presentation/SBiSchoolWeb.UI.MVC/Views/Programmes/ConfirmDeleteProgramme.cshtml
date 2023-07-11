@@ -1,0 +1,62 @@
+﻿@model SBiSchoolWeb.UI.MVC.Models.ConfirmDeleteModel
+
+@{
+    ViewBag.Title = "Confirm Delete";
+    var Programme = Model.Description.ToUpper(); 
+}
+
+<h2 class="page-title">Confirm Delete Programme - @Programme </h2>
+
+@using (Html.BeginForm("DeleteProgramme", "DataEntry", FormMethod.Post, new { enctype = "multipart/form-data", id = "delete-programme-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Confirm Delete</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <p>
+            <input type="submit" value="Delete"   id="btnSubmit" />
+        </p>
+    </fieldset>
+}
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () { 
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+
+        $("#btnSubmit").on("click", function (e) {
+
+            $("#progress").removeClass('displaynone');
+            $("#progress").addClass('displayblock');
+            $("#progress").show();
+
+            $("#delete-programme-form").submit();
+        });
+
+
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+

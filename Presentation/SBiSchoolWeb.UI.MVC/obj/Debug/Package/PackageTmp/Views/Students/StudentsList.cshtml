@@ -1,0 +1,97 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.Student>
+
+@{
+    ViewBag.Title = "Students";
+    int Students = Model.Count();
+}
+
+<h2 class="page-title">Students [ @Students ]  </h2>
+
+
+<div>
+    @using (Html.BeginForm("CreateStudent", "Students", FormMethod.Get, new { enctype = "multipart/form-data", id = "data-entry-create-student-form" }))
+    { 
+        <p>
+            <a id="btnSubmitCreateStudentForm" style="cursor: pointer;" title="Create Student">Create Student</a>
+        </p> 
+         
+    }
+</div>
+
+
+<table>
+    <tr>
+
+        <th>
+            @Html.DisplayNameFor(model => model.AdminNo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentSurName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.StudentOtherNames)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.KCPE)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentSurName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StudentOtherNames)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.KCPE)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditStudent", new { id = item.Id }) |
+            @Html.ActionLink("Details", "StudentDetails", new { id = item.Id }) |
+            @Html.ActionLink("Delete", "DeleteStudent", new { id = item.Id, descripton = item.StudentSurName + " " + item.StudentOtherNames })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+
+        $("#btnSubmitCreateStudentForm").on("click", function (e) {
+
+            e.preventDefault();
+
+            $("#progress").removeClass('displaynone');
+            $("#progress").addClass('displayblock');
+            $("#progress").show();
+
+            $("#data-entry-create-student-form").submit();
+
+        });
+
+    </script>
+
+}
+
+ 

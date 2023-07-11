@@ -1,0 +1,94 @@
+﻿@{
+    ViewBag.Title = "Site Map";
+}
+ 
+<h2 class="page-title"> Site Map</h2>
+
+  <div class="content-wrapper">       
+                <div class="float-left">                    
+                    
+                        <ul >
+                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Subjects", "GetAllSubjects", "Subjects")</li>
+                            <li>@Html.ActionLink("Programmes", "GetAllProgrammes", "Programmes")</li>
+                            <li>@Html.ActionLink("Teachers", "GetAllTeachers", "Teachers")</li>
+                            <li>@Html.ActionLink("Classes", "GetAllSchoolClasses", "SchoolClasses")</li>
+                            <li>@Html.ActionLink("Students", "GetAllStudents", "Students")</li>
+                            <li>@Html.ActionLink("Customers", "GetAllCustomers", "DataEntries")</li>
+                            <li>@Html.ActionLink("Grading", "GetAllGradingSystems", "DataEntries")</li>
+                            <li>@Html.ActionLink("Attendance", "GetAllAttendances", "DataEntries")</li> 
+                            <li>@Html.ActionLink("Rooms", "GetAllRooms", "DataEntries")</li> 
+                            <li>@Html.ActionLink("Locations", "GetAllLocations", "DataEntries")</li> 
+                            <li>@Html.ActionLink("Discipline Categories", "GetAllDisciplineCategories", "DataEntries")</li>
+                            <li>@Html.ActionLink("ExamPeriods", "GetAllExamPeriods", "ExamPeriods")</li> 
+                            <li>@Html.ActionLink("ExamTypes", "GetAllExamTypes", "ExamTypes")</li> 
+                            <li>@Html.ActionLink("Exams", "GetAllExams", "Exams")</li> 
+                            <li>@Html.ActionLink("Register Students", "GetAllRegisteredStudents", "Exams")</li> 
+                            <li>@Html.ActionLink("MarkSheet", "GetAllMarkSheet", "Exams")</li> 
+                            <li>@Html.ActionLink("Process Exams", "GetAllProcessedExams", "Exams")</li> 
+                            <li>@Html.ActionLink("Fee Structure", "GetAllFeeStructures", "Fees")</li> 
+                            <li>@Html.ActionLink("Admission", "GetAllAdmissions", "Fees")</li> 
+                            <li>@Html.ActionLink("Chart Of Accounts", "GetAllChartOfAccounts", "Accountings")</li> 
+                            <li>@Html.ActionLink("Accounts", "GetAllAccounts", "Accountings")</li> 
+                            <li>@Html.ActionLink("Account Types", "GetAllAccountTypes", "Accountings")</li> 
+                            <li>@Html.ActionLink("Transaction Types", "GetAllTransactionTypes", "Accountings")</li> 
+                            <li>@Html.ActionLink("Transactions Authorizations", "GetAllTransactionsAuthorizations", "Accountings")</li> 
+                            <li>@Html.ActionLink("Banks", "GetAllBanks", "Accountings")</li> 
+                            <li>@Html.ActionLink("Enquiry", "GetAllEnquiries", "Accountings")</li> 
+                            <li>@Html.ActionLink("Pay Fees", "GetAllPayFees", "Accountings")</li> 
+                            <li>@Html.ActionLink("General Posts", "GetAllGeneralPosts", "Accountings")</li> 
+                            <li>@Html.ActionLink("SMS", "GetAllSMS", "DataEntries")</li> 
+                            <li>@Html.ActionLink("Reports", "GetAllReports", "DataEntries")</li> 
+                            <li>@Html.ActionLink("Schools", "GetAllSchools", "DataEntries")</li> 
+                            <li>@Html.ActionLink("Roles", "GetAllRoles", "Administrators")</li> 
+                            <li>@Html.ActionLink("Users", "GetAllUsers", "Administrators")</li> 
+                            <li>@Html.ActionLink("Rights", "GetAllRights", "Administrators")</li> 
+                            <li>@Html.ActionLink("Settings", "GetAllSettings", "Administrators")</li> 
+                            <li>@Html.ActionLink("Time Table", "GetAllTimeTables", "DataEntries")</li> 
+                            <li>@Html.ActionLink("Progress", "GetAllProgressResultsList", "Exams")</li> 
+                             <li>@Html.ActionLink("Registered Exams", "GetAllRegisteredExams", "Exams")</li> 
+                            <li>@Html.ActionLink("Fee Structure Academic", "GetAllFeeStructureAcademics", "Fees")</li> 
+                            <li>@Html.ActionLink("Fee Structure Others", "GetAllFeeStructureOthers", "Fees")</li> 
+                        </ul>
+                    
+                </div>
+            </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+        </script>
+ 
+}
+
+
+
+
+
+
+
+
+
+

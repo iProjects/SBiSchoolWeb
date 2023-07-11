@@ -1,0 +1,123 @@
+﻿@model SBiSchoolWeb.Entities.Programme
+@{
+    ViewBag.Title = "Edit Programme";
+    var description = Model.Description.ToUpper();
+}
+
+<h2 class="page-title">Edit Programme - @description</h2>
+
+@using (Html.BeginForm("EditProgramme", "Programmes", FormMethod.Post, new { enctype = "multipart/form-data", id = "edit-programme-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Edit Programme</legend>
+
+        
+        <ol>
+
+            <li>
+                @Html.ValidationMessageFor(model => model.Id)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Description)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Hours)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Fees)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.Status)
+            </li>
+            <li>
+                @Html.ValidationMessageFor(model => model.IsDefault)
+            </li>
+        </ol>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Id)
+            @Html.ValidationMessageFor(model => model.Id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Hours)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Hours)
+            @Html.ValidationMessageFor(model => model.Hours)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Fees)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Fees)
+            @Html.ValidationMessageFor(model => model.Fees)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Status)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Status)
+            @Html.ValidationMessageFor(model => model.Status)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.IsDefault)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.IsDefault)
+            @Html.ValidationMessageFor(model => model.IsDefault)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" id="btnSubmit" style="float: left; clear: both" />
+        </p>
+
+    </fieldset>
+}
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,114 @@
+﻿@model IEnumerable<SBiSchoolWeb.Entities.Subject>
+
+@{
+    ViewBag.Title = "Subjects";
+    int Subjects = Model.Count();
+}
+
+<h2 class="page-title">Subjects [ @Subjects ]  </h2>
+
+
+<div>
+    @using (Html.BeginForm("CreateSubject", "Subjects", FormMethod.Get, new { enctype = "multipart/form-data", id = "data-entry-create-subject-form" }))
+    { 
+        <p>
+            <a id="btnSubmitCreateSubjectForm" style="cursor: pointer;" title="Create Subject">Create Subject</a>
+        </p> 
+         
+    }
+</div>
+
+
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ShortCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OutOf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PassMark)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShortCode)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.OutOf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PassMark)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "EditSubject", new { shortcode = item.ShortCode }) |
+            @Html.ActionLink("Details", "SubjectDetails", new { shortcode = item.ShortCode }) |
+            @Html.ActionLink("Delete", "DeleteSubject", new { shortcode = item.ShortCode, description = item.Description })
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+
+
+        $("#btnSubmitCreateSubjectForm").on("click", function (e) {
+
+            e.preventDefault();
+
+            $("#progress").removeClass('displaynone');
+            $("#progress").addClass('displayblock');
+            $("#progress").show();
+
+            $("#data-entry-create-subject-form").submit();
+
+        });
+
+    </script>
+
+}
+
+
+
+
+
+
+
+
+
+

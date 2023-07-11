@@ -1,0 +1,168 @@
+﻿@model SBiSchoolWeb.Entities.Teacher
+
+@{
+    ViewBag.Title = "Create Teacher";
+}
+
+<h2 class="page-title">Create Teacher</h2>
+
+@using (Html.BeginForm("CreateTeacher", "Teachers", FormMethod.Post, new { enctype = "multipart/form-data", id = "create-teacher-form" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Create Teacher</legend>
+
+        <article class="col1">
+            <div class="pad">
+
+                <ol>
+
+                    <li>
+                        @Html.ValidationMessageFor(model => model.Name)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.IDNo)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.TSCNo)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.Position)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.Email)
+                    </li>
+                </ol>
+
+
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Name)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Name)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IDNo)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.IDNo)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.TSCNo)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.TSCNo)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Position)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Position)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Email)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Email)
+                </div>
+
+
+            </div>
+        </article>
+
+        <article class="col2">
+            <div class="pad">
+
+                <ol>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.Status)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.DateJoined)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.DateLeft)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.IsLeft)
+                    </li>
+                    <li>
+                        @Html.ValidationMessageFor(model => model.HighestQualification)
+                    </li>
+                </ol>
+
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.Status)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.Status)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DateJoined)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DateJoined)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.DateLeft)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.DateLeft)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.IsLeft)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.IsLeft)
+                </div>
+
+                <div class="editor-label">
+                    @Html.LabelFor(model => model.HighestQualification)
+                </div>
+                <div class="editor-field">
+                    @Html.EditorFor(model => model.HighestQualification)
+                </div>
+
+
+
+            </div>
+        </article>
+
+        <p>
+            <input type="submit" value="Create" id="btnSubmit" style="float: left; clear: both" />
+        </p>
+
+    </fieldset>
+}
+
+
+
+
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+
+            $("#progress").hide();
+
+            $.ajaxSetup({ cache: false });
+
+        });
+    </script>
+
+}
+
